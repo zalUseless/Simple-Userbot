@@ -8,13 +8,16 @@
 
 import os
 import re
+import asyncio
 import time
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 from math import ceil
 from platform import python_version
-
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
+from datetime import datetime
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from dotenv import load_dotenv
@@ -329,13 +332,12 @@ with bot:
                     link_preview=False,
                 )
             else:
-                msg = await event.edit()
+                msg = await event.edit(result)
             await asyncio.sleep(45)
             try:
-               await msg.delete()
+                await msg.delete()
             except BaseException:
-            return
-
+                return
             await event.answer([result] if result else None)
 
         @tgbot.on(
