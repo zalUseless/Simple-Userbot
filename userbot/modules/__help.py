@@ -7,10 +7,14 @@
 # Thanks @Spechide.
 
 import logging
-
+import asyncio
 from userbot import BOT_USERNAME, BOT_TOKEN
 from userbot.events import register
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
+from datetime import datetime
+
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
