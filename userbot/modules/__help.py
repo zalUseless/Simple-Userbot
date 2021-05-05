@@ -7,13 +7,9 @@
 # Thanks @Spechide.
 
 import logging
-import asyncio
 from userbot import BOT_USERNAME, BOT_TOKEN
 from userbot.events import register
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
-from datetime import datetime
 
 
 logging.basicConfig(
@@ -41,9 +37,3 @@ async def yardim(event):
     else:
         return await event.edit("`The bot doesn't work! Please set the Bot Token and Username correctly.`"
                                 "\n`The module has been stopped.`")
-        msg = await event.edit()
-    await asyncio.sleep(45)
-    try:
-        await msg.delete()
-    except BaseException:
-        return
