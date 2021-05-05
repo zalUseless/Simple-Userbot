@@ -6,7 +6,7 @@
     <a href="https://github.com/rizgustiadi/Simple-Userbot/commits/master"><img src="https://img.shields.io/github/last-commit/rizgustiadi/Simple-Userbot/master?style=for-the-badge&logo=github" alt="commit" /></a></br>
 </p>
 
-![our](https://telegra.ph/file/42d57cae901ae6b0322ba.jpg)
+![our](https://telegra.ph/file/5962b1755624a95970a6e.jpg)
 
 `
  A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.
