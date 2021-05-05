@@ -34,7 +34,7 @@ async def _(event):
     await event.reply("`gbanning...`")
     asyncio.sleep(3.5)
     await event.reply(f"**user gbanned by** `{DEFAULTUSER} `")
-
+    await event.delete()
 
 @register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
 async def _(event):
@@ -55,7 +55,7 @@ async def _(event):
     await event.reply("`ungbanning...`")
     asyncio.sleep(3.5)
     await event.reply(f"**user ungbanned by** `{DEFAULTUSER} `")
-
+    await event.delete()
 
 CMD_HELP.update(
     {
