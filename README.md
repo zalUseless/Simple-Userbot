@@ -33,7 +33,7 @@
 # Generate String Session
 Whit replit <a href="https://replit.com/@Zalloveya/AkenoXNew">Klik Ini</a>
 # Deploy Heroku
-<p><a href="https://heroku.com/deploy?template=https://github.com/bambank9/testbot/tree/master"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/rizgustiadi/Simple-Userbot/tree/master"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 
 ## Credits
