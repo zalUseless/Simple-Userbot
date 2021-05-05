@@ -331,7 +331,6 @@ with bot:
                     ],
                     link_preview=False,
                 )
-            else:
                 msg = await event.edit(result)
             await asyncio.sleep(45)
             try:
