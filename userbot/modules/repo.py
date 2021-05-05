@@ -8,7 +8,7 @@ from userbot.events import register
 async def shalom(e):
     await e.edit(
         f"    🌪 My Repo 🌪\n\n"
-        f" ➥ [TestBot](https://github.com/rizgustiadi/Simple-Userbot)\n"
+        f" ➥ [Jancokkk](https://github.com/rizgustiadi/Simple-Userbot)\n"
         f" ┈┈┈╭━━━━━╮┈┈┈┈┈\n"
         f" ┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈\n"
         f" ┈┈┈┃┊┊╭━╮┻╮┈┈┈┈\n"
