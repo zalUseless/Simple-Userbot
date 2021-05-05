@@ -1,0 +1,187 @@
+{
+  "name": "Telegram Simple-Userbot",
+  "description": "[Simple-Userbot] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
+  "logo": "https://i.ibb.co/KhLWz5P/photo-2020-02-28-22-03-27.jpg",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/rizgustiadi/Simple-Userbot",
+  "website": "https://telegra.ph/file/42d57cae901ae6b0322ba.jpg",
+  "success_url": "https://t.me/OreBaka",
+  "stack": "container",
+  "env": {
+    "API_KEY": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true
+    },
+    "STRING_SESSION": {
+      "description": "Get this value by running [python3 string_session.py] in Termux or local system.",
+      "required": true
+    },
+    "HEROKU_API_KEY": {
+      "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Enter the Heroku app name here (Must an exact same name with your input above). It helps with userbot updates.",
+      "required": false
+    },
+    "UPSTREAM_REPO_URL": {
+      "description": "In case you maintain a fork, add your repo URL here.",
+      "value": "https://github.com/rizgustisdi/Simple-Userbot",
+      "required": false
+    },
+    "COUNTRY": {
+      "description": "Set your Country to be used in the .time and .date commands.",
+      "required": false
+    },
+    "TZ_NUMBER": {
+      "description": "Change this value in case your country has multiple Time Zones.",
+      "value": "1",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "ChromeDriver location for selenium based modules.",
+      "value": "/usr/bin/chromedriver",
+      "required": false
+    },
+    "GOOGLE_CHROME_BIN": {
+      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
+      "value": "/usr/bin/google-chrome",
+      "required": false
+    },
+    "OPEN_WEATHER_MAP_APPID": {
+      "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "required": false
+    },
+    "BOTLOG_CHATID": {
+      "description": "ChatID of the Log group. Create a Group > add a bot e.g. @dAnjani_bot > make the group public > type /id. (*usualy starts with '-100.....')",
+      "value": "0"
+    },
+    "BOTLOG": {
+      "description": "Incase you want to turn off logging, put this to false",
+      "value": "False"
+    },
+    "CONSOLE_LOGGER_VERBOSE": {
+      "description": "If you need verbosity on the console logging",
+      "value": "False"
+    },
+    "PM_AUTO_BAN": {
+      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
+      "value": "False"
+    },
+    "OCR_SPACE_API_KEY": {
+      "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
+      "required": false
+    },
+    "REM_BG_API_KEY": {
+      "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "required": false
+    },
+    "ANTI_SPAMBOT": {
+      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
+      "value": "False"
+    },
+    "ANTI_SPAMBOT_SHOUT": {
+      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
+      "value": "False"
+    },
+    "TMP_DOWNLOAD_DIRECTORY": {
+      "description": "Download location for many modules (GDrive, .download etc..)",
+      "value": "./downloads/"
+    },
+    "CLEAN_WELCOME": {
+      "description": "When a new person joins, the old welcome message is deleted.",
+      "value": "True"
+    },
+    "LASTFM_API": {
+      "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "required": false
+    },
+    "LASTFM_SECRET": {
+      "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "required": false
+    },
+    "LASTFM_USERNAME": {
+      "description": "Last.FM Username",
+      "required": false
+    },
+    "LASTFM_PASSWORD": {
+      "description": "Last.FM Password",
+      "required": false
+    },
+    "BIO_PREFIX": {
+      "description": "Prefix for Last.FM Module Bio.",
+      "required": false
+    },
+    "DEFAULT_BIO": {
+      "description": "Default profile bio.",
+      "value": "I'm using userbot",
+      "required": false
+    },
+    "ALIVE_NAME": {
+      "description": "Name to show in .alive message",
+      "required": false
+    },
+    "G_DRIVE_DATA": {
+      "description": "Enter the Google Drive authentication data, as a JSON structure.",
+      "required": false
+    },
+    "WEATHER_DEFCITY": {
+      "description": "Set the default city for the userbot's weather module.",
+      "required": false
+    }, 
+    "GIT_REPO_NAME": {
+      "description": "Set the repo for the gitupload module.",
+      "required": false
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "Set this in order to make the gitupload work. you can look https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line to assist you.",
+      "required": false
+    },
+    "GENIUS_API_TOKEN": {
+      "description": "Get this value from https://genius.com/developers.",
+      "required": false 
+    },
+    "TERM_ALIAS": {
+      "description": "set alias name for term cmd",
+      "required": false
+    },  	
+    "LOGSPAMMER": {
+      "description": "Set this to True (recomended) in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
+      "value": "False"
+    },
+    "DEEZER_ARL_TOKEN": {
+      "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
+      "required": false
+    },
+    "ALIVE_LOGO": {
+      "description": "Show Image/Logo in .alive message. the value MUST A DIRECT LINK to the photo unless it'll crash!!",
+      "required": false
+    },
+    "BOT_TOKEN": {
+      "description": "Set this to enable inline bot helper. get the token from @BotFather",
+      "required": false
+    },
+    "BOT_USERNAME": {
+      "description": "Username of the bot you created with @BotFather",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ]
+}
