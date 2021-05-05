@@ -77,51 +77,6 @@ async def killdabot(event):
     exit()
 
 
-@register(outgoing=True, pattern="^.community$")
-async def bot_community(community):
-    """ For .community command, just returns OG Paperplane's group link. """
-    await community.edit(
-        "Join Userbot Indo for help and support: @userbotindo"
-        "\nNote: project OUBnew-fortizer is build based Raphiel'sGang"
-        "OUBnew-fortizer project will improve to latest to make it stable."
-    )
-
-
-@register(outgoing=True, pattern="^.support$")
-async def bot_support(wannahelp):
-    """ For .support command, just returns the group link. """
-    await wannahelp.edit(
-        "Join the Userbot Indo Channel: @userbotindocloud \
-        \nJoin the Community Userbot Indo Chat: @userbotindo"
-    )
-
-
-@register(outgoing=True, pattern="^.contributor$")
-async def contributor(e):
-    await e.edit(
-        "Check out who [Contribute](https://github.com/fortifying/OUBnew/graphs/contributors) to this bot"
-    )
-
-
-@register(outgoing=True, pattern="^.creator$")
-async def creator(e):
-    await e.edit("[Heinz Der Flugel](https://t.me/fortifying)")
-
-
-@register(outgoing=True, pattern="^.readme$")
-async def reedme(e):
-    await e.edit(
-        "Here's something for you to read:\n"
-        "\n[OUBnew-fortizer README.md file](https://github.com/fortifying/OUBnew/blob/sql-extended/README.md)"
-        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-        "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-Google-Drive-04-03)"
-        "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
-        "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
-        "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
-        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)"
-    )
-
-
 # Copyright (c) Gegham Zakaryan | 2019
 @register(outgoing=True, pattern="^.repeat (.*)")
 async def repeat(rep):
@@ -135,22 +90,6 @@ async def repeat(rep):
         replyText += toBeRepeated + "\n"
 
     await rep.edit(replyText)
-
-
-@register(outgoing=True, pattern="^.repo$")
-async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
-    await wannasee.edit(
-        "Click [here](https://github.com/fortifying/OUBnew) to open OUBnew-fortizer's GitHub page."
-    )
-
-
-@register(outgoing=True, pattern="^.myrepo$")
-async def myrepo_is_here(wannaseeme):
-    """ For .myrepo command, just returns the repo URL. """
-    await wannaseeme.edit(
-        f"Click [here](https://github.com/{GIT_REPO_NAME}/tree/sql-extended/) to open {DEFAULTUSER}`s GitHub page"
-    )
 
 
 @register(outgoing=True, pattern="^.raw$")
@@ -205,35 +144,6 @@ CMD_HELP.update(
 \nUsage: If you need help, use this command."
     }
 )
-
-CMD_HELP.update(
-    {
-        "community": ".community\
-\nUsage: Join Userbot Indo community !!"
-    }
-)
-
-CMD_HELP.update(
-    {
-        "repo": ".repo\
-\nUsage: If you are curious what makes the userbot work, this is what you need."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "myrepo": ".myrepo\
-\nUsage: If you are curious which is your personal repo, this is what you have."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "readme": ".readme\
-\nUsage: Provide links to setup the userbot and it's modules."
-    }
-)
-
 CMD_HELP.update(
     {
         "creator": ".contributor\
