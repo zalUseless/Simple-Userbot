@@ -143,5 +143,5 @@ By - {}
 CMD_HELP.update({
     "song":
     "`.song`\
-\nUsage: Untuk Perintah .song < Judul Lagu >."
+\nUsage: Untuk Perintah\n .song <Artist - Judul Lagu>."
 })
