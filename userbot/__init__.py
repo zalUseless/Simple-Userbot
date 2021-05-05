@@ -328,6 +328,14 @@ with bot:
                     ],
                     link_preview=False,
                 )
+            else:
+                msg = await event.edit()
+            await asyncio.sleep(45)
+            try:
+               await msg.delete()
+            except BaseException:
+            return
+
             await event.answer([result] if result else None)
 
         @tgbot.on(
