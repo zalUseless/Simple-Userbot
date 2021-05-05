@@ -102,7 +102,7 @@ async def pingme(pong):
     await sleep(0.1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"🌪 Akeno Ping 🌪\n➥ **PING** : %sms\n➥ **UPTIME** : {uptime}\n➥ **OWNER** : [{user.first_name}](tg://user?id={user.id})\n" % (duration))
+    await pong.edit(f"🌪 Simple-Userot Ping 🌪\n➥ **PING** : %sms\n➥ **UPTIME** : {uptime}\n➥ **USER** : [{user.first_name}](tg://user?id={user.id})\n" % (duration))
 
 CMD_HELP.update(
     {"ping": "`.ping`\
