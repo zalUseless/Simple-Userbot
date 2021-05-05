@@ -14,7 +14,7 @@ from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
 from userbot import (COUNT_PM, CMD_HELP, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS, PMPERMIT_PIC)
+                     LASTMSG, LOGS)
 
 from userbot.events import register
 
