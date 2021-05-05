@@ -87,19 +87,47 @@ async def pingme(pong):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await pong.edit(
-        "🌪")
+        "Wait.....0%")
     await pong.edit(
-        "🌪 🌪")
-    await sleep(0.1)
+        "Wait.....5%")
     await pong.edit(
-        "🌪 🌪 🌪")
-    await sleep(0.1)
+        "Wait.....10%")
     await pong.edit(
-        "🌪 🌪 🌪 🌪")
-    await sleep(0.1)
+        "Wait.....15%")
     await pong.edit(
-        "🌪 🌪 🌪 🌪 🌪")
-    await sleep(0.1)
+        "Wait.....20%")
+    await pong.edit(
+        "Wait.....25%")
+    await pong.edit(
+        "Wait.....30%")
+    await pong.edit(
+        "Wait.....35%")
+    await pong.edit(
+        "Wait.....40%")
+    await pong.edit(
+        "Wait.....45%")
+    await pong.edit(
+        "Wait.....50%")
+    await pong.edit(
+        "Wait.....55%")
+    await pong.edit(
+        "Wait.....60%")
+    await pong.edit(
+        "Wait.....65%")
+    await pong.edit(
+        "Wait.....70%")
+    await pong.edit(
+        "Wait.....75%")
+    await pong.edit(
+        "Wait.....80%")
+    await pong.edit(
+        "Wait.....85%")
+    await pong.edit(
+        "Wait.....90%")
+    await pong.edit(
+        "Wait.....95%")
+    await pong.edit(
+        "Wait.....100%")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"🌪 Simple-Userbot Ping 🌪\n➥ **PING** : %sms\n➥ **UPTIME** : {uptime}\n➥ **USER** : [{user.first_name}](tg://user?id={user.id})\n" % (duration))
