@@ -8,7 +8,7 @@ from userbot.events import register
 async def shalom(e):
     await e.edit(
         f"    🌪 My Repo 🌪\n\n"
-        f" ➥ [TestBot](https://github.com/bambank9/testbot)\n"
+        f" ➥ [TestBot](https://github.com/rizgustiadi/Simple-Userbot)\n"
         f" ┈┈┈╭━━━━━╮┈┈┈┈┈\n"
         f" ┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈\n"
         f" ┈┈┈┃┊┊╭━╮┻╮┈┈┈┈\n"
@@ -20,6 +20,6 @@ async def shalom(e):
     CMD_HELP.update(
         {
             "repo": ".repo\
-\nUsage: repo for bambank."
+\nUsage: repo for Asu."
         }
     )
