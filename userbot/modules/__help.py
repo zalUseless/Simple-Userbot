@@ -37,7 +37,7 @@ async def yardim(event):
     else:
         return await event.edit("`The bot doesn't work! Please set the Bot Token and Username correctly.`"
                                 "\n`The module has been stopped.`")
-        msg = await event.edit(output)
+        msg = await event.edit()
     await asyncio.sleep(45)
     try:
         await msg.delete()
