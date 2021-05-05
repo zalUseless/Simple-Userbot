@@ -1,5 +1,4 @@
 <a href="https://cooltext.com"><img src="https://images.cooltext.com/5526473.png" width="802" height="147" alt="Simple-Userbot" /></a>
-<br />Image by <a href="https://cooltext.com">Cool Text: Free Logos and Buttons</a> - <a href="https://cooltext.com/Edit-Logo?LogoID=3832499307">Create An Image Just Like This</a>
 
 
 <p align="center">
