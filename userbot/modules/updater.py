@@ -60,7 +60,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
-                ' untuk dapat deploy perubahan terbaru dari Lord Userbot.`'
+                ' untuk dapat deploy perubahan terbaru dari Simple-Userbot.`'
             )
             repo.__del__()
             return
@@ -70,11 +70,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy testbot dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Simple-Userbot.`'
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nDyno testbot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
+                         '\nSimple-Userbot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -98,7 +98,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`testbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu.....`")
+            await event.edit("`Simple-Userbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu.....`")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -122,9 +122,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('** testbot ** `Berhasil Di Update!`')
+    await event.edit('** Simple-Userbot ** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('** testbot ** `Di Restart....`')
+    await event.edit('** Simple-Userbot ** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik`')
     await asyncio.sleep(10)
@@ -133,7 +133,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#BOT \n"
-            "**testbot Telah Di Perbarui **")
+            "**Simple-Userbot Telah Di Perbarui **")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -195,13 +195,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n** testbit Sudah Versi Terbaru**\n')
+            f'\n** Simple-Userbot Sudah Versi Terbaru**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**Pembaruan Untuk testbot [{ac_br}]:\n\n Pembaruan:**\n`{changelog}`'
+        changelog_str = f'**Pembaruan Untuk Simple-Userbot [{ac_br}]:\n\n Pembaruan:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -215,18 +215,18 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update testbot**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari testbot.__')
+        return await event.respond('**Perintah Untuk Update Simple-Userbot**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Simple-Userbot.__')
 
     if force_update:
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('`Proses Update testbot, Loading....1%`')
-        await event.edit('`Proses Update testbot, Loading....20%`')
-        await event.edit('`Proses Update testbot, Loading....35%`')
-        await event.edit('`Proses Update testbot, Loading....77%`')
-        await event.edit('`Proses Update testbot, Updating...90%`')
-        await event.edit('`Proses Update testbot, Mohon Menunggu....100%`')
+        await event.edit('`Proses Update Simple-Userbot, Loading....1%`')
+        await event.edit('`Proses Update Simple-Userbot, Loading....20%`')
+        await event.edit('`Proses Update Simple-Userbot, Loading....35%`')
+        await event.edit('`Proses Update Simple-Userbot, Loading....77%`')
+        await event.edit('`Proses Update Simple-Userbot, Updating...90%`')
+        await event.edit('`Proses Update Simple-Userbot, Mohon Menunggu....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
@@ -241,9 +241,9 @@ async def upstream(event):
 CMD_HELP.update({
     'update':
     ".update"
-    "\nUsage: Untuk Melihat Pembaruan Terbaru testbot."
+    "\nUsage: Untuk Melihat Pembaruan Terbaru Simple-Userbot."
     "\n\n.update now"
-    "\nUsage: Memperbarui testbot."
+    "\nUsage: Memperbarui Simple-Userbot."
     "\n\n.update deploy"
-    "\nUsage: Memperbarui testbot Dengan Cara Deploy Ulang."
+    "\nUsage: Memperbarui Simple-Userbot Dengan Cara Deploy Ulang."
 })
