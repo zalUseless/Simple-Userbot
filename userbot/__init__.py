@@ -281,7 +281,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [testbot](https://github.com/bambank9/testbot) modules helper...\nplease make your own bot, don't use mine 😋")
+                await event.reply("I'm [Simple-Userbot](https://github.com/rizgustisdi/Simple-Userbot) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
@@ -295,7 +295,7 @@ with bot:
                 result = builder.article(
                     "Please Use Only With .help Command",
                     text="{}\nTotal loaded modules: {}".format(
-                        "testbot modules helper.\n",
+                        "Simple-Userbot modules helper.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -303,19 +303,19 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "testbot Helper",
+                    "Simple-Userbot Helper",
                     text="List of Modules",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "testbot",
+                    "Simple-Userbot",
                     text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/bambank9/testbot"),
+                                "https://github.com/rizgustiadi/Simple-Userbot"),
                             custom.Button.url(
                                 "Support",
                                 "https://t.me/OreBaka")],
