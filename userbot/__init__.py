@@ -332,7 +332,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_next\((.+?)\)")
+                data=re.compile(rb"help_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
