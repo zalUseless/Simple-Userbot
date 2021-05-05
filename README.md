@@ -1,3 +1,7 @@
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5526473.png" width="802" height="147" alt="Simple-Userbot" /></a>
+<br />Image by <a href="https://cooltext.com">Cool Text: Free Logos and Buttons</a> - <a href="https://cooltext.com/Edit-Logo?LogoID=3832499307">Create An Image Just Like This</a>
+
+
 <p align="center">
     <a href="https://www.codacy.com/manual/rizgustiadi/Simple-Userbot?utm_source=github.com&utm_medium=referral&utm_content=rizgustiadi/Simple-Userbot&utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/c460544d68334a51b84c83ce8d3a1e98?style=for-the-badge&logo=codacy" alt="codacy badge" /></a>
     <a href="https://github.com/rizgustiadi/Simple-Userbot/commits/master"><img src="https://img.shields.io/github/last-commit/rizgustiadi/Simple-Userbot/master?style=for-the-badge&logo=github" alt="commit" /></a></br>
