@@ -373,7 +373,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == bot.uid:
                 await event.edit(
-                    "Menu Closed!!", buttons=buttons("Re-open Menu", data="reopen")]
+                    "Menu Closed!!", buttons=buttons("Re-open Menu", data="reopen")
                 )
             else:
                 reply_pop_up_alert = "Please make for yourself, don't use my bot!"
