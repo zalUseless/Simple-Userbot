@@ -266,16 +266,13 @@ def paginate_help(page_number, loaded_modules, prefix):
                 custom.Button.inline(
                     "║ ⌫️ ║", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline(
-                    "║ Close ║", data="{}_close({})".format(prefix, modulo_page)
-                ),
+                custom.Button.inline("║ Close ║", data="close"),
                 custom.Button.inline(
                     "║ ⌦️ ║", data="{}_next({})".format(prefix, modulo_page)
                 )
             )
         ]
     return pairs
-
 
 
 with bot:
