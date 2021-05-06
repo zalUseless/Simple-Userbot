@@ -9,7 +9,6 @@
 from datetime import datetime
 from asyncio import sleep
 from speedtest import Speedtest
-from . import *
 from userbot import CMD_HELP, StartTime, bot, USERS
 from userbot.events import register
 import time
