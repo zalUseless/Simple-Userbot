@@ -41,7 +41,6 @@ async def get_readable_time(seconds: int) -> str:
 
 @register(outgoing=True, pattern="^.speed$")
 async def _(event):
-    input_str = event.pattern_match.group(1)
     as_text = True
     as_document = False
     if input_str == "image":
