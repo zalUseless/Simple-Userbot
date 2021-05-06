@@ -336,6 +336,19 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
+        async def megic(event):
+            if event.query.user_id == bot.uid:
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "help")
+                await event.edit("Menu Re-opened", buttons=buttons)
+            else:
+                reply_pop_up_alert = "This bot ain't for u!!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+  
+
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"help_next\((.+?)\)")
@@ -356,20 +369,16 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"help_close\((.+?)\)")
-            )
-        )
+                data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "help")
-                # https://t.me/TelethonChat/115200
-                await event.edit(buttons=buttons)
-            else:
-                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        if event.query.user_id == bot.uid:
+            await event.edit(
+                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
+            )
+        else:
+            reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
 
         @tgbot.on(
