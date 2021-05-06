@@ -9,6 +9,7 @@
 from datetime import datetime
 from asyncio import sleep
 from speedtest import Speedtest
+from . import *
 from userbot import CMD_HELP, StartTime, bot, USERS
 from userbot.events import register
 import time
@@ -40,43 +41,88 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(outgoing=True, pattern="^.speed$")
-async def speedtst(spd):
-    """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Running high speed test . . .`")
-    test = Speedtest()
+async def _(event):
+    input_str = event.pattern_match.group(1)
+    as_text = True
+    as_document = False
+    if input_str == "image":
+        as_document = False
+    elif input_str == "file":
+        as_document = True
+    elif input_str == "text":
+        as_text = True
+    xx = await eor(event, "`Calculating ur Ultroid Server Speed. Please wait!`")
+    start = datetime.now()
+    s = speedtest.Speedtest()
+    s.get_best_server()
+    s.download()
+    s.upload()  # dchehe
+    end = datetime.now()
+    ms = (end - start).seconds
+    response = s.results.dict()
+    download_speed = response.get("download")
+    upload_speed = response.get("upload")
+    ping_time = response.get("ping")
+    client_infos = response.get("client")
+    i_s_p = client_infos.get("isp")
+    i_s_p_rating = client_infos.get("isprating")
+    reply_msg_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_msg_id = event.reply_to_msg_id
+    try:  # heheh
+        response = s.results.share()
+        speedtest_image = response
+        if as_text:
+            await xx.edit(
+                """`Simple-Userbot Server Speed in {} sec`
+`Download: {}`
+`Upload: {}`
+`Ping: {}`
+`Internet Service Provider: {}`
+`ISP Rating: {}`""".format(
+                    ms,
+                    convert_from_bytes(download_speed),
+                    convert_from_bytes(upload_speed),
+                    ping_time,
+                    i_s_p,
+                    i_s_p_rating,
+                )
+            )
+        else:
+            await event.client.send_file(
+                event.chat_id,
+                speedtest_image,  # heeehe
+                caption="**SpeedTest** completed in {} seconds".format(ms),
+                force_document=as_document,
+                reply_to=reply_msg_id,
+                allow_cache=False,
+            )
+            await event.delete()
+    except Exception as exc:  # dc
+        await xx.edit(
+            """**SpeedTest** completed in {} seconds
+Download: {}
+Upload: {}
+Ping: {}
+__With the Following ERRORs__
+{}""".format(
+                ms,
+                convert_from_bytes(download_speed),
+                convert_from_bytes(upload_speed),
+                ping_time,
+                str(exc),
+            )
+        )
 
-    test.get_best_server()
-    test.download()
-    test.upload()
-    test.results.share()
-    result = test.results.dict()
 
-    await spd.edit("`"
-                   "Started at "
-                   f"{result['timestamp']} \n\n"
-                   "Download "
-                   f"{speed_convert(result['download'])} \n"
-                   "Upload "
-                   f"{speed_convert(result['upload'])} \n"
-                   "Ping "
-                   f"{result['ping']} \n"
-                   "ISP "
-                   f"{result['client']['isp']}"
-                   "`")
-
-
-def speed_convert(size):
-    """
-    Hi human, you can't read bytes?
-    """
-    power = 2**10
-    zero = 0
-    units = {0: '', 1: 'Kb/s', 2: 'Mb/s', 3: 'Gb/s', 4: 'Tb/s'}
+def convert_from_bytes(size):
+    power = 2 ** 10
+    n = 0
+    units = {0: "", 1: "kilobytes", 2: "megabytes", 3: "gigabytes", 4: "terabytes"}
     while size > power:
         size /= power
-        zero += 1
-    return f"{round(size, 2)} {units[zero]}"
-
+        n += 1
+    return f"{round(size, 2)} {units[n]}"
 
 @register(outgoing=True, pattern="^.pink$")
 async def pingme(pong):
