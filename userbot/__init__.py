@@ -371,14 +371,14 @@ with bot:
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
-            await event.edit(
-                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
-            )
-        else:
-            reply_pop_up_alert = "Please make for yourself, don't use my bot!"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+            if event.query.user_id == bot.uid:
+                await event.edit(
+                    "Menu Closed!!", buttons=buttons("Re-open Menu", data="reopen")]
+                )
+            else:
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+ 
 
 
         @tgbot.on(
