@@ -356,7 +356,7 @@ with bot:
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == .uid:
+            if event.query.user_id == uid:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
