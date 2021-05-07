@@ -59,6 +59,7 @@ speedtest-cli
 sqlalchemy==1.3.23
 telethon==1.15.0
 telethon-session-sqlalchemy
+spamwatch
 urbandict
 telethon-tgcrypto
 wikipedia
