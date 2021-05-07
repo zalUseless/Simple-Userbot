@@ -50,6 +50,7 @@ youtube-dl
 regex
 pytz
 qrcode
+geopy
 requests
 rarfile
 git+https://github.com/Ncode2014/search-engine-parser
