@@ -8,7 +8,7 @@ from userbot.events import register
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern=r"^\.tiny(?: |$)(.*)")
+@register(outgoing=True, pattern='^tiny(?: |$)(.*)')
 async def _(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
@@ -79,5 +79,5 @@ async def _(event):
     await event.delete()
     os.remove(file)
     os.remove(ik)
-CMD_HELP.update({"tiny": "`.tiny`\
+CMD_HELP.update({"tiny": "`tiny`\
     \nPenjelasan: Untuk Memperkecil Sticker."})
