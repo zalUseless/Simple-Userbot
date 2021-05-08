@@ -11,7 +11,7 @@ from re import sub
 from PIL import Image
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.types import MessageMediaPhoto
-import re
+import re,asyncio
 from urllib.request import urlopen
 import time
 import datetime
