@@ -17,7 +17,7 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"\.help")
+@register(outgoing=True, pattern='^help(?: |$)(.*)')
 async def yardim(event):
     tgbotusername = BOT_USERNAME
     if tgbotusername and BOT_TOKEN:
