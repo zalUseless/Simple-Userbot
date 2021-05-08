@@ -79,9 +79,10 @@ def speed_convert(size):
 
 
 
-@register(outgoing=True, pattern="^.pink$")
+
+@register(outgoing=True, pattern='^ping(?: |$)(.*)')
 async def pingme(pong):
-    """ For .pink command, ping the userbot from any chat.  """
+    """ For ping command, ping the userbot from any chat.  """
     global USERS
     user = await bot.get_me()
     user.name = user.first_name
@@ -134,7 +135,7 @@ async def pingme(pong):
     await pong.edit(f"🌪 Simple-Userbot Ping 🌪\n➥ **PING** : %sms\n➥ **UPTIME** : {uptime}\n➥ **USER** : [{user.first_name}](tg://user?id={user.id})\n" % (duration))
 
 CMD_HELP.update(
-    {"ping": "`.pink`\
+    {"ping": "`ping`\
     \nUsage: Shows how long it takes to ping your bot.\
     \n\n`.speed`\
     \nUsage: Does a speedtest and shows the results."})
