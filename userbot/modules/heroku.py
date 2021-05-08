@@ -119,8 +119,27 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("`Mendapatkan Infomasi...`")
-    user_id = Heroku.account().id
+    await dyno.edit("`Wait For A Secon.....[5%]`")
+    await dyno.edit("`Wait For A Secon.....[10%]`")
+    await dyno.edit("`Wait For A Secon.....[15%]`")
+    await dyno.edit("`Wait For A Secon.....[20%]`")
+    await dyno.edit("`Wait For A Secon.....[25%]`")
+    await dyno.edit("`Wait For A Secon.....[30%]`")
+    await dyno.edit("`Wait For A Secon.....[35%]`")
+    await dyno.edit("`Wait For A Secon.....[40%]`")
+    await dyno.edit("`Wait For A Secon.....[45%]`")
+    await dyno.edit("`Wait For A Secon.....[50%]`")
+    await dyno.edit("`Wait For A Secon.....[55%]`")
+    await dyno.edit("`Wait For A Secon.....[60%]`")
+    await dyno.edit("`Wait For A Secon.....[65%]`")
+    await dyno.edit("`Wait For A Secon.....[70%]`")
+    await dyno.edit("`Wait For A Secon.....[75%]`")
+    await dyno.edit("`Wait For A Secon.....[80%]`")
+    await dyno.edit("`Wait For A Secon.....[85%]`")
+    await dyno.edit("`Wait For A Secon.....[90%]`")
+    await dyno.edit("`Wait For A Secon.....[95%]`")
+    await dyno.edit("`Wait For A Secon.....[10%]`")
+    user_id = Heroku.account()id
     path = "/accounts/" + user_id + "/actions/get-quota"
     async with aiohttp.ClientSession() as session:
         useragent = (
@@ -166,7 +185,7 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                f"✘`Penggunaan Tirex`  **{app.name}**:\n"
+                f"✘`Penggunaan Tirex For`  **{app.name}**:\n"
                 f"    ➥ **{AppHours} jam, "
                 f"{AppMinutes} menit  -  {AppPercentage}%**"
                 "\n\n"
