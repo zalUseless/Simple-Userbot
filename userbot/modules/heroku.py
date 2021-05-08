@@ -139,7 +139,7 @@ async def dyno_usage(dyno):
     await dyno.edit("`Wait For A Secon.....[90%]`")
     await dyno.edit("`Wait For A Secon.....[95%]`")
     await dyno.edit("`Wait For A Secon.....[10%]`")
-    user_id = Heroku.account()id
+    user_id = Heroku.account().id
     path = "/accounts/" + user_id + "/actions/get-quota"
     async with aiohttp.ClientSession() as session:
         useragent = (
