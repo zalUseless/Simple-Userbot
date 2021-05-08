@@ -28,6 +28,15 @@ from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 
 # ================= CONSTANT =================
+
+
+"""
+Available Commands:
+.comli"""
+
+
+
+
 METOOSTR = [
     "Me too thanks",
     "Haha yes, me too",
@@ -938,6 +947,39 @@ async def insult(e):
     await e.edit(choice(INSULT_STRINGS))
 
 
+
+
+
+
+@register(outgoing=True, pattern=r"^.(.*)")
+async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 0.1
+
+    animation_ttl = range(0, 101)
+
+    input_str = event.pattern_match.group(1)
+
+    if input_str == "comli":
+
+        await event.edit(input_str)
+
+        animation_chars = ["👉       ✊️", "👉     ✊️", "👉  ✊️", "👉✊️💦"]
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 4])
+
+
+
+
+
 @register(outgoing=True, pattern="^.cp(?: |$)(.*)")
 async def copypasta(cp_e):
     """ Copypasta the famous meme """
@@ -1577,6 +1619,8 @@ CMD_HELP.update(
 \nUsage: Let Me Run, run, RUNNN!\
 \n\n>`.chase`\
 \nUsage: You better start running\
+\n\n>`.comli`\
+\nUsage: Comli Every Time Every Where\
 \n\n>`.metoo`\
 \nUsage: Haha yes\
 \n\n>`.mock`\
