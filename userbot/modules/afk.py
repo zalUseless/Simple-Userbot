@@ -96,7 +96,8 @@ async def set_not_afk(event):
         os.system("rm -rf *.png")
         os.system("rm -rf *.jpg")
 
-@bot.on(events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private)))
+@bot.on(events.NewMessage(incoming=True, 
+                          func=lambda e: bool(e.mentioned or e.is_private)))
 async def on_afk(event):
     if event.fwd_from:
         return
@@ -152,8 +153,12 @@ async def on_afk(event):
             pass
 
 
-@register(outgoing=True, pattern=r"^\.afk(?: |$)(.*)", disable_errors=True) # pylint:disable=E0602
-async def _(event):
+@register(
+    outgoing=True, pattern=r"^\.afk(?: |$)(.*)", disable_errors=True
+)  # pylint:disable=E0602
+    async def _(event):
+    if event.fwd_from:
+        return
     reply = await event.get_reply_message()
     global USER_AFK
     global afk_time
