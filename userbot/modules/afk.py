@@ -152,7 +152,7 @@ async def on_afk(event):
             pass
 
 
-@register(outgoing=True, pattern="^afk(?: |$)(.*)", disable_errors=True)
+@register(outgoing=True, pattern='^afk(?: |$)(.*)', disable_errors=True)
 async def _(event):
     reply = await event.get_reply_message()
     global USER_AFK
@@ -262,11 +262,5 @@ async def _(event):
         except BaseException:
             pass
 
-
-CMD_HELP.update(
-    {
-        "afk": "afk"
-\nUsage: Sets you as afk.\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere."
-    }
-)
+CMD_HELP.update({"afk": "`afk`\
+    \nPenjelasan: afk <alasan> Bisa Sambil replay media."})
