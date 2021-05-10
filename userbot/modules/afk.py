@@ -23,12 +23,13 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     BOTLOG_CHATID,
     CMD_HELP,
     COUNT_MSG,
+    USERS,
     ISAFK,
     PM_AUTO_BAN,
     USERS,
     bot,
 )
-
+global USERS
 global USER_AFK
 global afk_time
 global last_afk_message
@@ -49,7 +50,10 @@ async def set_not_afk(event):
     global afk_time
     global last_afk_message
     global afk_start
+    global USERS
     global afk_end
+    user = await bot.get_me()
+    user.username = user.first_name
     back_alive = datetime.now()
     afk_end = back_alive.replace(microsecond=0)
     if afk_start != {}:
@@ -61,18 +65,18 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"**King {ALIVE_NAME} Kembali Online Untuk Chat Telegram**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
+                    f"**Bos [{user.first_name}](tg://user?id={user.id}) Kembali Online...!**",
                 )
             else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"**King {ALIVE_NAME} Terhormat Sedang Sibuk!**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
+                    f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang DiLangit Ke 10...**",
                     file=pic,
                 )
         except BaseException:
             shite = await bot.send_message(
                 event.chat_id,
-                f"**King {ALIVE_NAME} Kembali Online**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
+                f"**Bos [{user.first_name}](tg://user?id={user.id}) Kembali Online...!**",
             )
 
         except BaseException:
@@ -103,6 +107,9 @@ async def on_afk(event):
     global last_afk_message
     global afk_start
     global afk_end
+    global USERS
+    user = await bot.get_me()
+    user.username = user.first_name
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     if afk_start != {}:
@@ -114,11 +121,12 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                f"**✘ {ALIVE_NAME} Sedang AFK** `{total_afk_time}` **Yang Lalu ✘**\n" +
-                f"**✦҈͜͡➳ Alasan :** `{reason}`")
+                f"**Bos** [{user.first_name}](tg://user?id={user.id})"
+                f"**Sedang AFK : ** `{total_afk_time}` **Yang Lalu**"
+                f"**Alasan :** `{reason}`")
         else:
             message_to_reply = (
-                f"**✘ Maaf King {ALIVE_NAME} Sedang AFK** `{total_afk_time}` **Yang Lalu ✘**"
+                f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang DiLangit Ke 10...**"
             )
         try:
             if pic.endswith((".tgs", ".webp")):
@@ -156,6 +164,7 @@ async def _(event):
     global last_afk_message
     global last_afk_msg
     global afk_start
+    global USERS
     global afk_end
     global reason
     global pic
@@ -164,6 +173,8 @@ async def _(event):
     last_afk_message = {}
     last_afk_msg = {}
     afk_end = {}
+    user = await bot.get_me()
+    user.username = user.first_name
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
@@ -184,34 +195,37 @@ async def _(event):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
                         event.chat_id,
-                        f"\n**✘ King {ALIVE_NAME} Telah AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                        f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK**",
+                        f"**Alasan :** `{reason}`",
                     )
                 else:
                     await bot.send_message(
                         event.chat_id,
-                        f"\n**✘ King {ALIVE_NAME} Telah AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                        f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK **",
+                        f"**Alasan :** `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await bot.send_message(
                     event.chat_id,
-                    f"\n**✘ King {ALIVE_NAME} Telah AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                    f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK **",
+                    f"**Alasan :** `{reason}`",
                 )
         else:
             try:
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
-                        event.chat_id, f"**✘ King {ALIVE_NAME} Telah AFK ✘**"
+                        event.chat_id, f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK **",
                     )
                 else:
                     await bot.send_message(
                         event.chat_id,
-                        f"**✘ King {ALIVE_NAME} Telah AFK ✘**",
+                        f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK **",
                         file=pic,
                     )
             except BaseException:
-                await bot.send_message(event.chat_id, f"**✘ King {ALIVE_NAME} Telah AFK ✘**")
+                await bot.send_message(event.chat_id, f"**Bos [{user.first_name}](tg://user?id={user.id}) Telah AFK **")
         await event.delete()
         try:
             if reason and pic:
@@ -219,34 +233,37 @@ async def _(event):
                     await bot.send_message(BOTLOG_CHATID, file=pic)
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                        f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang Afk**",
+                        f"**Alasan :** `{reason}`",
                     )
                 else:
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                        f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang AFK**",
+                        f"**Alasan :** `{reason}`",
                         file=pic,
                     )
             elif reason:
                 await bot.send_message(
                     BOTLOG_CHATID,
-                    f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**\n**✦҈͜͡➳ Alasan :** `{reason}`",
+                    f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang AFK**",
+                    f"**Alasan :** `{reason}`",
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(BOTLOG_CHATID, file=pic)
                     await bot.send_message(
-                        BOTLOG_CHATID, f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**"
+                        BOTLOG_CHATID, f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang AFK**",
                     )
                 else:
                     await bot.send_message(
                         BOTLOG_CHATID,
-                        f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**",
+                        f"\n**Bos [{user.first_name}](tg://user?id={user.id}) Sedang AFK**",
                         file=pic,
                     )
             else:
                 await bot.send_message(
-                    BOTLOG_CHATID, f"\n**✘ King {ALIVE_NAME} Sedang AFK ✘**"
+                    BOTLOG_CHATID, f"**Bos [{user.first_name}](tg://user?id={user.id}) Sedang AFK **"
                 )
         except Exception as e:
             BOTLOG_CHATIDger.warn(str(e))
@@ -254,11 +271,5 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "afk": "**✘ Plugin : **`afk`\
-        \n\n  •  **Perintah :** `.afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n  •  **Function : **Memberi tahu kalau King sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
-        \n\n  •  **Perintah :** `.off`\
-        \n  •  **Function : **Memberi tahu kalau King sedang OFFLINE, dan menguubah nama belakang menjadi ⚡️𝙊𝙁𝙁⚡️\
-    "
-    }
-)
+        "afk": "**Modules : **`afk`\
+        \n**Usage :** `.afk` <alasan> bisa <sambil reply All Media>."})
