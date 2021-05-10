@@ -66,7 +66,7 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah On Kembali..! ",
+                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah On Kembali..! "
                 )
             else:
                 shite = await bot.send_message(
@@ -77,7 +77,7 @@ async def set_not_afk(event):
         except BaseException:
             shite = await bot.send_message(
                 event.chat_id,
-                f"Bos [{user.first_name}](tg://user?id={user.id}) Telah On Kembali..! ",
+                f"Bos [{user.first_name}](tg://user?id={user.id}) Telah On Kembali..! "
             )
        
         except BaseException:
@@ -188,21 +188,21 @@ async def _(event):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
                         event.chat_id,
-                        f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n"
+                        f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n",
                         f"Alasan : `{reason}`",
                     )
                 else:
                     await bot.send_message(
                         event.chat_id,
-                        f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n"
+                        f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n",
                         f"Alasan : `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await bot.send_message(
                     event.chat_id,
-                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n"
-                    f"Alasan : `{reason}`"
+                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n",
+                    f"Alasan : `{reason}`",
                 )
         else:
             try:
@@ -231,7 +231,7 @@ async def _(event):
                         f"Alasan : `{reason}`",
                     )
                 else:
-                    await ubot.send_message(
+                    await bot.send_message(
                         BOTLOG_CHATID,
                         f"Dibilangin Bos [{user.first_name}](tg://user?id={user.id}) Sedang Afk..",
                         file=pic,
@@ -239,24 +239,26 @@ async def _(event):
             elif reason:
                 await bot.send_message(
                     BOTLOG_CHATID,
-                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n"
+                    f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n",
                     f"Alasan : `{reason}`"
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
-                    await ultroid_bot.send_message(BOTLOG_CHATID, file=pic)
-                    await ultroid_bot.send_message(
+                    await bot.send_message(BOTLOG_CHATID, file=pic)
+                    await bot.send_message(
                       BOTLOG_CHATID,
-                      f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!"
+                      f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!",
                     )
                 else:
-                    await ultroid_bot.send_message(
+                    await bot.send_message(
                       BOTLOG_CHATID,
                       f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!",
                       file=pic,
                     )
             else:
-                await ultroid_bot.send_message(LOG, get_string("afk_8"))
+                await bot.send_message(
+                BOTLOG_CHATID,
+                f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!")
         except BaseException:
             pass
 
