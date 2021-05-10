@@ -152,7 +152,7 @@ async def on_afk(event):
             pass
 
 
-@register(outgoing=True, pattern=r'^\afk(?: |$)(.*)', disable_errors=True)
+@register(outgoing=True, pattern=r"^\.afk(?: |$)(.*)", disable_errors=True) # pylint:disable=E0602
 async def _(event):
     reply = await event.get_reply_message()
     global USER_AFK
@@ -262,5 +262,5 @@ async def _(event):
         except BaseException:
             pass
 
-CMD_HELP.update({"afk": "`afk`\
+CMD_HELP.update({"afk": `afk`\
     \nPenjelasan: afk <alasan> Bisa Sambil replay media."})
