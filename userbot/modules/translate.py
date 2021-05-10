@@ -19,7 +19,7 @@ async def _(event):
         return
     if "trim" in event.raw_text:
         return
-    x = await eor(event, "Translating...")
+    x = await event.edit("Translating...")
     input_str = event.pattern_match.group(1)
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
