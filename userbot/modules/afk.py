@@ -267,8 +267,8 @@ async def _(event):
                 await bot.send_message(
                 BOTLOG_CHATID,
                 f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!")
-        except BaseException:
-            pass
+        except Exception as e:
+            BOTLOG_CHATIDger.warn(str(e))
 
 CMD_HELP.update({"afk": "`.afk`\
     \nPenjelasan: afk <alasan> Bisa Sambil replay media."})
