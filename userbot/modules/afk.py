@@ -156,7 +156,7 @@ async def on_afk(event):
 @register(
     outgoing=True, pattern=r"^\.afk(?: |$)(.*)", disable_errors=True
 )  # pylint:disable=E0602
-    async def _(event):
+async def _(event):
     if event.fwd_from:
         return
     reply = await event.get_reply_message()
