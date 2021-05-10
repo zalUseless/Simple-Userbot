@@ -267,7 +267,6 @@ CMD_HELP.update(
     {
         "afk": "afk"
 \nUsage: Sets you as afk.\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere.\
-"
+you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere."
     }
 )
