@@ -162,6 +162,7 @@ async def on_afk(event):
     reply = await event.get_reply_message()
     global USER_AFK
     global afk_time
+    global USERS
     global last_afk_message
     global last_afk_msg
     global afk_start
@@ -173,6 +174,8 @@ async def on_afk(event):
     last_afk_message = {}
     last_afk_msg = {}
     afk_end = {}
+    user = await bot.get_me()
+    user.username = user.first_name
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
