@@ -270,5 +270,5 @@ async def _(event):
         except BaseException:
             pass
 
-CMD_HELP.update({"afk": "`afk`\
+CMD_HELP.update({"afk": "`.afk`\
     \nPenjelasan: afk <alasan> Bisa Sambil replay media."})
