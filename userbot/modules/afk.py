@@ -152,7 +152,7 @@ async def on_afk(event):
             pass
 
 
-@register(outgoing=True, pattern='^afk(?: |$)(.*)', disable_errors=True)
+@register(outgoing=True, pattern=r'^\afk(?: |$)(.*)', disable_errors=True)
 async def _(event):
     reply = await event.get_reply_message()
     global USER_AFK
