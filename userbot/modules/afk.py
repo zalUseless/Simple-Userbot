@@ -196,7 +196,7 @@ async def _(event):
                         event.chat_id,
                         f"Bos [{user.first_name}](tg://user?id={user.id}) Telah Afk\n"
                         f"Alasan : `{reason}`"
-                        file=pic
+                        file=pic,
                     )
             except BaseException:
                 await bot.send_message(
@@ -209,14 +209,14 @@ async def _(event):
                 if pic.endswith((".tgs", ".webp")):
                     await bot.send_message(event.chat_id, file=pic)
                     await bot.send_message(
-                      event.chat_id
+                      event.chat_id,
                       f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!"
                     )
                 else:
                     await bot.send_message(
                         event.chat_id,
                         f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!"
-                        file=pic
+                        file=pic,
                     )
             except BaseException:
                 await bot.send_message(event.chat_id, f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!")
@@ -234,7 +234,7 @@ async def _(event):
                     await bot.send_message(
                         BOTLOG_CHATID,
                         f"Dibilangin Bos [{user.first_name}](tg://user?id={user.id}) Sedang Afk.."
-                        file=pic
+                        file=pic,
                     )
             elif reason:
                 await bot.send_message(
@@ -253,7 +253,7 @@ async def _(event):
                     await bot.send_message(
                       BOTLOG_CHATID,
                       f"Maaf Bos [{user.first_name}](tg://user?id={user.id}) Sedang Di Langit Ke 10!"
-                      file=pic
+                      file=pic,
                     )
             else:
                 await bot.send_message(
