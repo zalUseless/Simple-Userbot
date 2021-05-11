@@ -15,14 +15,13 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # By @xditya. Thanks to @AvinashReddy for the ytdl base.
-# Re edit by @Zal
+# Re edit by @Zal & @bambank9
 
 
 
 
 import json
 import os
-
 import pybase64
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.types import DocumentAttributeAudio
@@ -39,12 +38,14 @@ from youtube_dl.utils import (
 )
 from youtubesearchpython import SearchVideos
 
-from userbot.events import register
+from userbot.events import register, bot, USERS
 from userbot import CMD_HELP
 
 
 @register(outgoing=True, pattern=r"^\.song (.*)")
 async def download_video(event):
+    user = await bot.get_me()
+    user.username = user.first_name
     await event.edit("`Mencari.....`")
     url = event.pattern_match.group(1)
     if not url:
@@ -129,7 +130,7 @@ By - {}
         event.chat_id,
         f"{rip_data['id']}.mp3",
         supports_streaming=True,
-        caption=f"**➡ Song:** {rip_data['title']}\n**➡ By:** {rip_data['uploader']}\n",
+        caption=f"**➥ Song:** {rip_data['title']}\n**➥ By:** {rip_data['uploader']}\n**➥ Uploaded :** [{user.first_name}](tg://user?id={user.id})\n",
         attributes=[
             DocumentAttributeAudio(
                 duration=int(rip_data["duration"]),
