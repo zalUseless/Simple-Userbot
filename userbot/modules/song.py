@@ -38,12 +38,13 @@ from youtube_dl.utils import (
 )
 from youtubesearchpython import SearchVideos
 
-from userbot.events import register, bot, USERS
-from userbot import CMD_HELP
+from userbot.events import register
+from userbot import CMD_HELP, bot, USERS
 
 
 @register(outgoing=True, pattern=r"^\.song (.*)")
 async def download_video(event):
+    global USERS
     user = await bot.get_me()
     user.username = user.first_name
     await event.edit("`Mencari.....`")
