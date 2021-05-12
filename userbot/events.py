@@ -141,19 +141,10 @@ def register(**args):
 
                     ftext += result
 
-                    with open("error.log", "w+") as file:
-                        file.write(ftext)
+                    file = open("error.log", "w+")
+                    file.write(ftext)
+                    file.close()
 
-                    if LOGSPAMMER:
-                        await check.respond(
-                            "`Sorry, my userbot has crashed.\
-                        \nThe error logs are stored in the userbot's log chat.`"
-                        )
-
-                    await check.client.send_file(send_to,
-                                                 "error.log",
-                                                 caption=text)
-                    remove("error.log")
             else:
                 pass
 
