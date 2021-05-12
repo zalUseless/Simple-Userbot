@@ -27,9 +27,9 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info(
-    "Congratulations, your userbot is now running !!"
-    "Test it by type .on or .alive in any chat."
-    "for further assistance, head to https://t.me/userbotindo")
+    "Selamat , Simple-Userbot is now running !!"
+    "Untuk Test  .on Atau .alive Di mana aja."
+    "Jangan Lupa Cebok Bitch...... ")
 
 if not BOTLOG_CHATID:
     LOGS.warning(
