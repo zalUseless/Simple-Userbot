@@ -381,7 +381,7 @@ with bot:
                 if len(cmdhel) > 150:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
-                        + "\n\nRead more .help "
+                        + "\n\nRead more .helpme "
                         + modul_name
                         + " "
                     )
