@@ -3,7 +3,6 @@
 
 
 import html
-from telethon import *
 from userbot.events import register
 from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
@@ -17,7 +16,7 @@ from userbot import (
 )
 
 
-@register(outgoing=True, pattern="^.clone(?: |$)(.*)")
+@register(outgoing=True, pattern="^clone(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -65,11 +64,11 @@ async def _(event):
     #    message_id_to_reply = event.message.id
     # await bot.send_message(event.chat_id,"Fuck Me Bitch?",reply_to=message_id_to_reply,)
     await event.delete()
-    await bot.send_message(event.chat_id,"Clone Sukses....`",reply_to=reply_message)
+    await bot.send_message(event.chat_id,"`Clone Sukses....`",reply_to=reply_message)
 
 
 
-@register(outgoing=True, pattern="^.revert(?: |$)(.*)")
+@register(outgoing=True, pattern="^revert(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -142,7 +141,7 @@ async def get_full_user(event):
 
 
 CMD_HELP.update(
-    {"clone": "`.clone`\
+    {"clone": "`clone`\
     \nUsage: Meng clone lonte.\
-    \n\n`.revert`\
+    \n\n`revert`\
     \nUsage: Kembali biar ga jadi lonte."})
