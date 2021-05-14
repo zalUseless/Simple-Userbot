@@ -13,6 +13,7 @@ from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, ALIVE_NAME, DEFAULT_
 if 1 == 1:
     name = "Profile Photos"
     client = bot
+@bot.on(events.MessageEdited(outgoing=True))
 
 @register(outgoing=True, pattern="^.clone(?: |$)(.*)")
 async def _(event):
