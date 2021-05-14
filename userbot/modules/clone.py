@@ -63,17 +63,24 @@ async def _(event):
     #message_id_to_reply = event.message.reply_to_msg_id
     # if not message_id_to_reply:
     #    message_id_to_reply = event.message.id
-    # await bot.send_message(
-    #  event.chat_id,
-    #  "Fuck Me Bitch?",
-    #  reply_to=message_id_to_reply,
-    #  )
+    # await bot.send_message(event.chat_id,"Fuck Me Bitch?",reply_to=message_id_to_reply,)
     await event.delete()
-    await bot.send_message(
-        event.chat_id,
-        "Clone Sukses....`",
-        reply_to=reply_message
-    )
+    await bot.send_message(event.chat_id,"Clone Sukses....`",reply_to=reply_message)
+
+
+
+@register(outgoing=True, pattern="^.revert(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    name = f"{ALIVE_NAME}"
+    bio = f"{DEFAULT_BIO}"
+    n = 1
+    await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
+    await bot(functions.account.UpdateProfileRequest(about=bio))
+    await bot(functions.account.UpdateProfileRequest(first_name=name))
+    await event.edit("`Revert Sukses.... `")
+    await event.delete()
 
 
 async def get_full_user(event):
@@ -132,18 +139,6 @@ async def get_full_user(event):
             except Exception as e:
                 return None, e
 
-@register(outgoing=True, pattern="^.revert(?: |$)(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    name = f"{ALIVE_NAME}"
-    bio = f"{DEFAULT_BIO}"
-    n = 1
-    await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
-    await bot(functions.account.UpdateProfileRequest(about=bio))
-    await bot(functions.account.UpdateProfileRequest(first_name=name))
-    await event.edit("`Revert Sukses.... `")
-    await event.delete()
 
 
 CMD_HELP.update(
