@@ -267,8 +267,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "║ ⌫️ ║", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "║Close║", data="{}_close({})".format(prefix, modulo_page)
-                ),
+                    "║Close║", data="close"),
                 custom.Button.inline(
                     "║ ⌦️ ║", data="{}_next({})".format(prefix, modulo_page)
                 )
@@ -373,7 +372,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery( # pylint:disable=E0602
-                data=re.compile(rb"help_close\((.+?)\)")
+                data=re.compile(rb"close\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
