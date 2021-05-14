@@ -140,7 +140,7 @@ async def _(event):
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
     await event.edit("`Revert Sukses.... `")
-
+    await event.delete()
 
 
 CMD_HELP.update(
