@@ -66,7 +66,7 @@ async def _(event):
     #  reply_to=message_id_to_reply,
     #  )
     await event.delete()
-    await bot.send_message(
+    await event.edit(
         event.chat_id,
         "Clone Sukses... `",
         reply_to=reply_message
