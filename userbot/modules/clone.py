@@ -3,6 +3,7 @@
 
 
 import html
+from telethon import *
 from userbot.events import register
 from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
@@ -60,12 +61,14 @@ async def _(event):
     # if not message_id_to_reply:
     #    message_id_to_reply = event.message.id
     # await bot.send_message(
-    #  event.chat_id,"Fuck Me Bitch?",
+    #  event.chat_id,
+    #  "Fuck Me Bitch?",
     #  reply_to=message_id_to_reply,
     #  )
     await event.delete()
     await bot.send_message(
-        event.chat_id,"Clone Sukses... `",
+        event.chat_id,
+        "Clone Sukses... `",
         reply_to=reply_message
     )
 
@@ -138,12 +141,9 @@ async def get_full_user(event):
             except Exception as e:
                 return None, e
 
+
 CMD_HELP.update(
-    {
-        "clone": "`.clone <reply to user who you want to clone.`\
-    \n**Use - clone the replied user account.\
+    {"clone": "`.clone`\
+    \nUsage: Meng clone lonte.\
     \n\n`.revert`\
-    \nUse - Reverts back to your profile which you have set in heroku.\
-    "
-    }
-)
+    \nUsage: Kembali biar ga jadi lonte."})
