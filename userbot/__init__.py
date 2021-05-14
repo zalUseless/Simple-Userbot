@@ -266,6 +266,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                 custom.Button.inline(
                     "║ ⌫️ ║", data="{}_prev({})".format(prefix, modulo_page)
                 ),
+                custom.Button.inline("Close", data="close"),
                 custom.Button.inline(
                     "║ ⌦️ ║", data="{}_next({})".format(prefix, modulo_page)
                 )
@@ -370,18 +371,12 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery( # pylint:disable=E0602
-                data=re.compile(rb"close\((.+?)\)")
+                data=re.compile(b"close\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid: # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
-                    current_page_number - 1, dugmeler, "help"  # pylint:disable=E0602
-                )
-                # https://t.me/TelethonChat/115200
-                await event.edit("Menu Closed!!", buttons=buttons)
+                await event.edit("Menu Closed!!")
             else:
                 reply_pop_up_alert = "Ini Bot Gua Jancokk..  "
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
