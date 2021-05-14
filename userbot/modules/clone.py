@@ -66,23 +66,11 @@ async def _(event):
     #  reply_to=message_id_to_reply,
     #  )
     await event.delete()
-    await event.edit(
+    await bot.send_message(
         event.chat_id,
-        "Clone Sukses... `",
+        "Clone Sukses....`",
         reply_to=reply_message
     )
-
-@register(outgoing=True, pattern="^.revert(?: |$)(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    name = f"{ALIVE_NAME}"
-    bio = f"{DEFAULT_BIO}"
-    n = 1
-    await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
-    await bot(functions.account.UpdateProfileRequest(about=bio))
-    await bot(functions.account.UpdateProfileRequest(first_name=name))
-    await event.edit("`Revert Sukses.... `")
 
 
 async def get_full_user(event):
@@ -140,6 +128,19 @@ async def get_full_user(event):
                 return replied_user, None
             except Exception as e:
                 return None, e
+
+@register(outgoing=True, pattern="^.revert(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    name = f"{ALIVE_NAME}"
+    bio = f"{DEFAULT_BIO}"
+    n = 1
+    await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
+    await bot(functions.account.UpdateProfileRequest(about=bio))
+    await bot(functions.account.UpdateProfileRequest(first_name=name))
+    await event.edit("`Revert Sukses.... `")
+
 
 
 CMD_HELP.update(
