@@ -14,11 +14,11 @@ from userbot.events import register
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 DEFAULTUSERBIO = "404: No bio found!"
-if  PRIVATE_GROUP_ID is None:
+if  BOTLOG_CHATID is None:
     BOTLOG = False
 else:
     BOTLOG = True
-    BOTLOG_CHATID = PRIVATE_GROUP_ID
+    BOTLOG = BOTLOG_CHATID
 
 
 @register(outgoing=True, pattern='^clone(?: |$)(.*)')
