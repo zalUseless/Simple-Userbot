@@ -136,10 +136,10 @@ with bot:
                     "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
 
-        else:
-            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+            else:
+                reply_pop_up_alert = "Ini Bot Gua Jancokk..  "
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+ 
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
