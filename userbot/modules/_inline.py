@@ -1,5 +1,26 @@
 from userbot import bot
 
+# Bot Logs setup:
+CONSOLE_LOGGER_VERBOSE = sb(os.environ.get(
+    "CONSOLE_LOGGER_VERBOSE") or "False")
+
+if CONSOLE_LOGGER_VERBOSE:
+    basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=DEBUG,
+    )
+else:
+    basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=INFO)
+LOGS = getLogger(__name__)
+
+if version_info[0] < 3 or version_info[1] < 8:
+    LOGS.info(
+        "You MUST have a python version of at least 3.8."
+        "Multiple features depend on this. Bot quitting."
+    )
+
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
