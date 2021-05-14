@@ -9,7 +9,7 @@ from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, BOTLOG_CHATID
 from userbot.events import register
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
