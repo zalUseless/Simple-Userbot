@@ -387,7 +387,7 @@ with bot:
                     current_page_number - 1, dugmeler, "help"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
-                await event.edit("Menu Re-Opend" buttons=buttons)
+                await event.edit("Menu Re-Opend")
             else:
                 reply_pop_up_alert = "Ini Bot Gua Jancokk.."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
