@@ -373,7 +373,9 @@ with bot:
             events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid: # pylint:disable=E0602
-                await event.edit("Menu Closed..!!")
+                await event.edit(
+                    "Menu Closed..!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
+            )
             else:
                 reply_pop_up_alert = "Ini Bot Gua Jancokk..  "
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
