@@ -21,6 +21,7 @@ from datetime import datetime
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from dotenv import load_dotenv
+from telethon import Button
 from telethon import version
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
