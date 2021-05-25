@@ -26,4 +26,4 @@ async def bcast(event):
     await c.edit(f"**Successfully Sending Message To** `{done}` **Group, Failed To Send Message To** `{d}` **Group**")
 
 CMD_HELP.update({"bcast": "`.send <pesan>`\
-                \nPenjelasan: Global Broadcast mengirim pesan ke Seluruh Grup yang Lord Masuki."})
+                \nPenjelasan: Global Broadcast Untuk Ngirim Pesan Secara Global."})
