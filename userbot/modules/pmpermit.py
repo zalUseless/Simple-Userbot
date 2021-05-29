@@ -22,13 +22,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-         f"Anda Sedang Berada Di Private Chat\n"
-         f"••••••••• 🌪{DEFAULTUSER}🌪 ••••••••\n"
-         f"Mohon Untuk Tidak Spam DiSini"
-         f"Jadi Silahkan Tunggu {DEFAULTUSER} \n"
-         f"Membaca Pesan Anda... \n"
-         f"Protect By : Simple-Userbot\n"
-         f"*Ini Pesan Otomatis*"
+          f"Anda Sedang Berada Di Private Chat\n"
+          f"••••••••• 🌪{DEFAULTUSER}🌪 ••••••••\n"
+          f"Mohon Untuk Tidak Spam DiSini"
+          f"Jadi Silahkan Tunggu {DEFAULTUSER} \n"
+          f"Membaca Pesan Anda... \n"
+          f"Protect By : Simple-Userbot\n"
+          f"*Ini Pesan Otomatis*")
 # =================================================================
 
 
