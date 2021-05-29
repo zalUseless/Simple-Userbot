@@ -14,17 +14,21 @@ from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
 from userbot import (COUNT_PM, CMD_HELP, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS)
+                     LASTMSG, LOGS, ALIVE_NAME)
 
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+
 DEF_UNAPPROVED_MSG = (
-         "Sorry, I haven't approved you to PM yet.\n"
-         "Please wait for me to look in.\n"
-         "Until then, please don't spam My PM or you will get blocked...\n"
-         "Thank You\n\n"
-         "*This is an automated message.")
+         f"Anda Sedang Berada Di Private Chat\n"
+         f"••••••••• 🌪{DEFAULTUSER}🌪 ••••••••\n"
+         f"Mohon Untuk Tidak Spam DiSini"
+         f"Jadi Silahkan Tunggu {DEFAULTUSER} \n"
+         f"Membaca Pesan Anda... \n"
+         f"Protect By : Simple-Userbot\n"
+         f"*Ini Pesan Otomatis*"
 # =================================================================
 
 
