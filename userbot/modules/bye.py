@@ -13,6 +13,6 @@ async def shalom(e):
     CMD_HELP.update(
         {
             "Bye": ".bye\
-\nUsage: gives a nice Gitub Page as output."
+\nUsage: Cmd Tipu2 keluar grup."
         }
     )
