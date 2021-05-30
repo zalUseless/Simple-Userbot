@@ -1,6 +1,6 @@
 {
   "name": "Telegram Simple-Userbot",
-  "description": "[Simple-Userbot] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
+  "description": "[Simple-Userbot] A modular Telegram userbot running on Python 3.9+ with an sqlalchemy database.",
   "logo": "https://telegra.ph/file/42d57cae901ae6b0322ba.jpg",
   "keywords": [
     "telegram",
