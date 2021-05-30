@@ -9,7 +9,7 @@
 ![our](https://telegra.ph/file/5962b1755624a95970a6e.jpg)
 
 `
- A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.
+ A modular Telegram userbot running on Python 3.9+ with an sqlalchemy database.
 `
 
 ```
