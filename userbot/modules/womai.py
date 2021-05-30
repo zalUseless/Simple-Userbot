@@ -36,6 +36,6 @@ async def WooMai(netase):
 CMD_HELP.update(
         {
             "womai": ".nts\
-\nUsage: gives a nice Gitub Page as output."
+\nUsage: .nts <judul lagu>"
         }
     )
