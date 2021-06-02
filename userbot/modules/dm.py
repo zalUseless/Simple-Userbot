@@ -27,7 +27,7 @@ async def dm(tolol):
     d = tolol.pattern_match.group(1)
     c = d.split(" ")
     try:
-        chat_id = await get_user_id(c[0])
+        chat_id = await bot.get_user_id(c[0])
     except Exception as ex:
         return await tolol.edit("`" + str(ex) + "`", time=5)
     msg = ""
