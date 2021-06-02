@@ -21,7 +21,7 @@ async def _(v):
             l = int(l)
         except BaseException:
             try:
-                l = await ban_time(v, l)
+                l = await v.ban_time(l)
             except BaseException:
                 return await v.edit( "`Incorrect Format`")
     await v.edit(f"Starting Fake Typing For {l} sec.")
@@ -39,7 +39,7 @@ async def _(v):
             l = int(l)
         except BaseException:
             try:
-                l = await ban_time(v, l)
+                l = await v.ban_time(l)
             except BaseException:
                 return await v.edit("`Incorrect Format`")
     await v.edit(f"Starting Fake audio recording For {l} sec.")
@@ -57,7 +57,7 @@ async def _(v):
             l = int(l)
         except BaseException:
             try:
-                l = await ban_time(v, l)
+                l = await v.ban_time(l)
             except BaseException:
                 return await v.edit("`Incorrect Format`")
     await v.edit(f"Starting Fake video recording For {l} sec.")
@@ -75,7 +75,7 @@ async def _(v):
             l = int(l)
         except BaseException:
             try:
-                l = await ban_time(v, l)
+                l = await v.ban_time(l)
             except BaseException:
                 return await v.edit("`Incorrect Format`")
     await v.edit(f"Starting Fake Game Playing For {l} sec.")
