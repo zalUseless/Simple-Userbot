@@ -19,7 +19,7 @@ For Command
 """
 
 
-@register(outgoing=True, pattern(="^.dm (.*)"))
+@register(outgoing=True, pattern="^.dm (.*)")
 async def dm(tolol):
     if len(tolol.text) > 3:
         if not tolol.text[3] == " ":  # weird fix
