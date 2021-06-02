@@ -45,6 +45,7 @@ async def _(anjink):
     await anjink.edit(f"Starting Fake audio recording For {l} sec.")
     async with anjink.client.action(anjink.chat_id, "record-audio"):
         await asyncio.sleep(l)
+        await anjink.delete()
 
 
 @register(outgoing=True, pattern="^.fvideo (.*)")
