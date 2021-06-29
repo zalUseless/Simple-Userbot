@@ -1,3 +1,4 @@
+import asyncio
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
@@ -20,10 +21,11 @@ async def _(goblok):
             await conv.send_message(f'/{lirik}')
             await conv.send_message(f'{song}')
             response = await response
+            await asyncio.sleep(3)
         except YouBlockedUserError:
             await goblok.reply("Unblock @iLyricsBot dulu Goblok!!")
             return
         else:
-            await goblok.edit(f"{response.message.message.message}")
-            await goblok.client.delete_messages(response.message.message.message)
-CMD_HELP.update({"lirik": "`.lirik <judul - penyanyi>`" "\nUsage: Untuk Memcari Lirik Lagu."})
+            await goblok.edit(f"{response.message.message}")
+            await goblok.client.delete_messages(response.message.message)
+CMD_HELP.update({"lirik": "`.lirik <judul - penyanyi>`" "\nUsage: Untuk Mencari Lirik Lagu."})
