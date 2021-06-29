@@ -24,6 +24,6 @@ async def _(goblok):
             await goblok.reply("Unblock @iLyricsBot dulu Goblok!!")
             return
         else:
-            await goblok.edit(f"{response.message.message}")
-            await goblok.client.delete_messages(response.message.message)
+            await goblok.edit(f"{response.message.message.message}")
+            await goblok.client.delete_messages(response.message.message.message)
 CMD_HELP.update({"lirik": "`.lirik <judul - penyanyi>`" "\nUsage: Untuk Memcari Lirik Lagu."})
