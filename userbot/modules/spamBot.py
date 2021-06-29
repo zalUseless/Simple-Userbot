@@ -15,7 +15,7 @@ async def _(jesnolimit):
             response = conv.wait_event(
                 events.NewMessage(
                     incoming=True,
-                    from_users=510263282))
+                    from_users=178220800))
             await conv.send_message(f'/{limit}')
             response = await response
         except YouBlockedUserError:
@@ -24,4 +24,4 @@ async def _(jesnolimit):
         else:
             await jesnolimit.edit(f"{response.message.message}")
             await jesnolimit.client.delete_messages(response.message.message)
-CMD_HELP.update({"spamBot": "`.limit`\\nUsage: Untuk Melihat Limit Akun."})
+CMD_HELP.update({"spamBot": "`.limit`" "\nUsage: Untuk Melihat Limit Akun Kena Limit."})
