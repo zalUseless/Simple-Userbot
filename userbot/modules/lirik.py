@@ -20,8 +20,6 @@ async def _(goblok):
                     from_users=232268607))
             await conv.send_message(f'/{lirik}')
             await conv.send_message(f'{song}')
-            response = await response
-            await asyncio.sleep(3)
         except YouBlockedUserError:
             await goblok.reply("Unblock @iLyricsBot dulu Goblok!!")
             return
