@@ -7,6 +7,7 @@ from userbot.events import register
 async def _(goblok):
     if goblok.fwd_from:
         return
+    song = goblok.pattern_match.group(1)
     chat = "@iLyricsBot"  # pylint:disable=E0602
     lirik = f"start"  # pylint:disable=E0602
     await goblok.edit("Tunggu Bro... ")
@@ -16,7 +17,7 @@ async def _(goblok):
                 events.NewMessage(
                     incoming=True,
                     from_users=232268607))
-            await conv.send_message(f'/{lirik}')
+            await conv.send_message(f'/{lirik} {song}')
             response = await response
         except YouBlockedUserError:
             await goblok.reply("Unblock @iLyricsBot dulu Goblok!!")
