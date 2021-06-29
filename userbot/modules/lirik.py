@@ -18,7 +18,6 @@ async def _(goblok):
                     incoming=True,
                     from_users=232268607))
             await conv.send_message(f'/{lirik}')
-            response = await response
             await conv.send_message(f'{song}')
             response = await response
         except YouBlockedUserError:
