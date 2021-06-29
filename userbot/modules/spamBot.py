@@ -24,7 +24,7 @@ async def _(jesnolimit):
         else:
             await jesnolimit.edit(f"{response.message.message}")
             await jesnolimit.client.delete_messages(response.message.message)
-    msg = await netase.client.delete_messages(
+    msg = await jesnolimit.client.delete_messages(
         conv.chat_id, [msg.id, response.id, respond.id]
     )
 CMD_HELP.update({"spamBot": "`.limit`" "\nUsage: Untuk Melihat Limit Akun Kena Limit."})
