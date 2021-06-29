@@ -16,7 +16,7 @@ async def _(jesnolimit):
                 events.NewMessage(
                     incoming=True,
                     from_users=178220800))
-            await conv.send_message(f'/{limit}')
+            msg = await conv.send_message(f'/{limit}')
             response = await response
         except YouBlockedUserError:
             await jesnolimit.reply("Unblock @SpamBot dulu Goblok!!")
@@ -24,4 +24,7 @@ async def _(jesnolimit):
         else:
             await jesnolimit.edit(f"{response.message.message}")
             await jesnolimit.client.delete_messages(response.message.message)
+    msg = await netase.client.delete_messages(
+        conv.chat_id, [msg.id, response.id, respond.id]
+    )
 CMD_HELP.update({"spamBot": "`.limit`" "\nUsage: Untuk Melihat Limit Akun Kena Limit."})
