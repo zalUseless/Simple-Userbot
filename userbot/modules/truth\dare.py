@@ -47,15 +47,8 @@ async def _(kontol):
         else:
             await kontol.edit(f"{response.message.message}")
             await kontol.client.delete_messages(response.message.message
-
-
-
-
-
-
-
 CMD_HELP.update(
-    {"truth\dare": "`.dare`\
+    {"truthdare": "`.dare`\
     \nUsage: tantangan.\
     \n\n `truth`\
     \nUsage: kejujuran."})
