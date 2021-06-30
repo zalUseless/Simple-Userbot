@@ -16,7 +16,7 @@ async def _(kontol):
                 events.NewMessage(
                     incoming=True,
                     from_users=1335899453))
-            await conv.send_message(f'/{limit}')
+            await conv.send_message(f'/{tolol}')
             response = await response
         except YouBlockedUserError:
             await kontol.reply("Unblock @truthordares_bot dulu Goblok!!")
@@ -24,4 +24,4 @@ async def _(kontol):
         else:
             await kontol.edit(f"{response.message.message}")
             await kontol.client.delete_messages(response.message.message)
-CMD_HELP.update({"truth\dare": "`.dare`" "\nUsage: Untuk Melihat Limit Akun Kena Limit."})
+CMD_HELP.update({"truth\dare": "`.dare`" "\nUsage: tantangan."})
