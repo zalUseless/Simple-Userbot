@@ -58,6 +58,4 @@ CMD_HELP.update(
     {"truth\dare": "`.dare`\
     \nUsage: tantangan.\
     \n\n `truth`\
-    \nUsage: kejujuran."
- }
-)
+    \nUsage: kejujuran."})
